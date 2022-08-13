@@ -1,9 +1,5 @@
 package com.testing.pageObject;
 
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,10 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 public class AccountLoginPagePO {
 
     @FindBy(id = "email")
-    public static WebElement Email;
+    public static WebElement EmailField;
 
     @FindBy(id ="pass")
-    public static WebElement Password2;
+    public static WebElement PasswordField;
 
     @FindBy(css = "#send2 > span")
     public static WebElement SignInButton;
@@ -25,9 +21,12 @@ public class AccountLoginPagePO {
     }
 
 
-    public void enterEmail(String NewEmail) {Email.sendKeys(NewEmail);}
+    public void enterEmail(String Email) {
+        EmailField.sendKeys(Email);
 
-    public void enterPassword2(String NewPassword) {Password2.sendKeys(NewPassword);}
+    }
+
+    public void enterPassword(String Password) {PasswordField.sendKeys(Password);}
 
     public void clickSignInButton() {SignInButton.click();}
 

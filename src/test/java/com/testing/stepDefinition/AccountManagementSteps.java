@@ -47,13 +47,13 @@ public class AccountManagementSteps {
     }
 
     @When("I enter {string} {string}")
-    public void iEnter(String NewEmail, String NewPassword) {
+    public void iEnter(String Email, String Password) {
         AccountLoginPagePO accountLoginPagePO =  new AccountLoginPagePO(driver);
-        accountLoginPagePO.enterEmail(NewEmail);
-        accountLoginPagePO.enterPassword2(NewPassword);
+        accountLoginPagePO.enterEmail(Email);
+        accountLoginPagePO.enterPassword(Password);
     }
 
-    @And("I click on SignIn Button")
+    @And("I click on SignIn")
     public void iClickOnSignInButton() {
         AccountLoginPagePO accountLoginPagePO = new AccountLoginPagePO(driver);
         accountLoginPagePO.clickSignInButton();
