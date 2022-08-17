@@ -37,9 +37,39 @@ public class AccountManagementSteps {
 
     }
 
+    @And("I click on my order")
+    public void iClickOnMyOrder() {
+        CreateAccountPagePO createAccountPagePO = new CreateAccountPagePO(driver);
+        createAccountPagePO.clickMyOrdersLink();
+    }
+
+    @And("I click on what's new")
+    public void iClickOnWhatSNew() {
+        CreateAccountPagePO createAccountPagePO = new CreateAccountPagePO(driver);
+        createAccountPagePO.clickWhatIsNewLink();
+    }
+
+    @And("I click on bra range")
+    public void iClickOnBraRange() {
+        CreateAccountPagePO createAccountPagePO = new CreateAccountPagePO(driver);
+        createAccountPagePO.clickBraRangeLink();
+    }
+    @And("I click on Bra")
+    public void iClickOnBra() {
+        CreateAccountPagePO createAccountPagePO = new CreateAccountPagePO(driver);
+        createAccountPagePO.clickBraTopLink();
+    }
+    @And("I click on size")
+    public void iClickOnSize() {
+        CreateAccountPagePO createAccountPagePO = new CreateAccountPagePO(driver);
+        createAccountPagePO.clickBraSizeLink();
+    }
+
     @Then("My account page should be displayed")
     public void myAccountPageShouldBeDisplayed() {
     }
+
+    //Login Scenario
     @Given("I am on the Login page")
     public void iAmOnTheLoginPage() {
         HomePagePO homepagePO = new HomePagePO(driver);
@@ -59,10 +89,54 @@ public class AccountManagementSteps {
         accountLoginPagePO.clickSignInButton();
     }
 
+
+    @And("I click on my account summary")
+    public void iClickOnMyAccountSummary() {
+        AccountLoginPagePO accountLoginPagePO = new AccountLoginPagePO(driver);
+        accountLoginPagePO.clickMyAccountSummary();
+    }
+
     @Then("My account page should be opened")
     public void myAccountPageShouldBeOpened() {
-        String expectedPageTitle = "Customer Login";
+        String expectedPageTitle = "Account Summary | My Account |  Next Directory Online";
         String actualPageTitle = driver.getTitle();
         Assert.assertEquals(expectedPageTitle,actualPageTitle);
     }
+
+    @And("I click on Women")
+    public void iClickOnWomen() {
+        AccountLoginPagePO accountLoginPagePO = new AccountLoginPagePO(driver);
+        accountLoginPagePO.clickWomenLink();
+    }
+
+    @And("I click on Item")
+    public void iClickOnItem() {
+        AccountLoginPagePO accountLoginPagePO = new AccountLoginPagePO(driver);
+        accountLoginPagePO.clickWomenItem();
+    }
+
+    @And("I click on Colour")
+    public void iClickOnColour() {
+        AccountLoginPagePO accountLoginPagePO = new AccountLoginPagePO(driver);
+        accountLoginPagePO.clickColour();
+    }
+
+    //@And("I click on Size")
+    //public void iClickOnSize() {
+        //AccountLoginPagePO accountLoginPagePO = new AccountLoginPagePO(driver);
+        //accountLoginPagePO.clickSize();
+    //}
+
+    @And("I click on Add To Cart")
+    public void iClickOnAddToCart() {
+        AccountLoginPagePO accountLoginPagePO = new AccountLoginPagePO(driver);
+        accountLoginPagePO.clickAddToCartButton();
+    }
+
+    @Then("My checkout page should be displayed")
+    public void myCheckoutPageShouldBeDisplayed() {
+    }
+
+
+
 }

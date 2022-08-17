@@ -26,6 +26,21 @@ public class CreateAccountPagePO {
     @FindBy(css = "#form-validate > div > div.primary > button")
     public static WebElement CreateAnAccountButton;
 
+    @FindBy(linkText = "My Orders")
+    public static WebElement MyOrdersLink;
+
+    @FindBy(linkText = "What's New")
+    public static WebElement WhatIsNewLink;
+
+    @FindBy(linkText = "Bras & Tanks")
+    public static WebElement BraRangeLink;
+
+    @FindBy(linkText = "Electra Bra Top")
+    public static WebElement BraTopLink;
+
+    @FindBy(css = "#option-label-size-157-item-172")
+    public static WebElement BraSizeLink;
+
 
 
 
@@ -60,6 +75,16 @@ public class CreateAccountPagePO {
     public void clickCreateAnAccountButton(){
         CreateAnAccountButton.click();
     }
+
+    public void clickMyOrdersLink() {MyOrdersLink.click();}
+
+    public void clickWhatIsNewLink() {WhatIsNewLink.click();}
+
+    public void clickBraRangeLink() {BraRangeLink.click();}
+
+    public void clickBraTopLink() {BraTopLink.click();}
+
+    public void clickBraSizeLink() {BraSizeLink.click();}
 
 
 
